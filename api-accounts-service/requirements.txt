@@ -1,0 +1,8 @@
+fastapi
+sqlalchemy
+pydantic
+uvicorn
+mysqlclient
+httpx
+PyMySQL
+cryptography
