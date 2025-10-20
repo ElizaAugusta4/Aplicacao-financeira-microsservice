@@ -14,6 +14,9 @@ DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAM
 engine = create_engine(
     DATABASE_URL,
     pool_pre_ping=True,
+    pool_size=20,
+    max_overflow=80,
+    pool_timeout=60,
 )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
