@@ -25,7 +25,7 @@ spec:
               mountPath: /var/lib/mysql
       volumes:
         - name: mysql-data
-          emptyDir: {} # troca por PVC em produção
+          emptyDir: {}
 ---
 apiVersion: v1
 kind: Service
