@@ -12,7 +12,6 @@ def read_root():
 
 @app.post("/transactions", response_model=schemas.TransactionOut, status_code=201)
 def create_transaction(transaction: schemas.TransactionCreate, db: Session = Depends(get_db)):
-    # Criar transação direto no próprio banco
     db_transaction = models.AccountTransaction(**transaction.dict())
     db.add(db_transaction)
     db.commit()
